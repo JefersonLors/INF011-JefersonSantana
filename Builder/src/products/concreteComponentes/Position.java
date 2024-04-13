@@ -17,4 +17,8 @@ public class Position {
         return y;
     }
 
+    @Override
+    public String toString(){
+        return "x: " + this.getX() + "\ty: " + this.getY();
+    }
 }

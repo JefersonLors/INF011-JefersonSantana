@@ -2,18 +2,17 @@ package builders;
 
 import products.components.*;
 import products.concreteComponentes.Dimension;
-import products.concreteComponentes.cords.FabricCord;
 
 public interface MouseBuilder {
-    public abstract MouseBuilder withDimension(Dimension dimension);
+    public void withDimension(Dimension dimension);
 
     public MouseBuilder withBluetoothModule(BluetoothModule bluetoothModule);
 
-    public MouseBuilder withBatteryModule(BatteryModule bateryModule);
+    public MouseBuilder withBatteryModule(BatteryModule batteryModule);
 
     public MouseBuilder withCord(Cord cord);
 
-    public MouseBuilder withRgbModule(LightModule rgbModule);
+    public MouseBuilder withLightModule(LightModule rgbModule);
 
     public MouseBuilder withScroll(Scroll scroll);
 

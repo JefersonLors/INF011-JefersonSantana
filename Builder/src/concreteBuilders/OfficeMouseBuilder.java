@@ -20,9 +20,8 @@ public class OfficeMouseBuilder implements MouseBuilder {
     private Button saveEnergyModeButton;
 
     @Override
-    public MouseBuilder withDimension(Dimension dimension) {
+    public void withDimension(Dimension dimension) {
         this.dimension = dimension;
-        return this;
     }
 
     @Override
@@ -43,7 +42,7 @@ public class OfficeMouseBuilder implements MouseBuilder {
     }
 
     @Override
-    public MouseBuilder withRgbModule(LightModule lightModule) {
+    public MouseBuilder withLightModule(LightModule lightModule) {
         this.lightModule = lightModule;
         return this;
     }

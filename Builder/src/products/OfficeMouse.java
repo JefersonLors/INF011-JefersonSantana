@@ -7,7 +7,7 @@ import products.concreteComponentes.cords.CarbonFiberCord;
 import products.concreteComponentes.cords.FabricCord;
 
 public class OfficeMouse {
-    private Dimension dimension;
+    private Dimension dimensions;
     private Position position;
     private BluetoothModule bluetoothModule;
     private LightModule lightModule;
@@ -20,11 +20,11 @@ public class OfficeMouse {
     private Button powerButton;
     private Button saveEnergyModeButton;
 
-    public OfficeMouse(Dimension dimension, BluetoothModule bluetoothModule,
+    public OfficeMouse(Dimension dimensions, BluetoothModule bluetoothModule,
                        LightModule lightModule, Scroll scroll, BatteryModule batteryModule,
                        Material material, Sensor sensor, Button rightClickButton,
                        Button leftClickButton, Button powerButton, Button saveEnergyModeButton) {
-        this.dimension = dimension;
+        this.dimensions = dimensions;
         this.bluetoothModule = bluetoothModule;
         this.lightModule = lightModule;
         this.scroll = scroll;
@@ -49,8 +49,22 @@ public class OfficeMouse {
     public void pressRightClickButton(){
         this.rightClickButton.click("right button pressed");
     }
-
     public void moveTo(Position position){
         this.position = position;
     }
+    @Override
+    public String toString(){
+        return "Dimensions: " + this.dimensions +
+                "\nBluetooth Module: " + this.bluetoothModule +
+                "\nLight Module: " + this.lightModule +
+                "\nBattery Module: " + this.batteryModule +
+                "\nScroll: " + this.scroll +
+                "\nMaterial: " + this.material +
+                "\nSensor: " + this.sensor +
+                "\nRight Button: " + this.rightClickButton +
+                "\nLeft Button: " + this.leftClickButton +
+                "\nPower Button: " + this.powerButton +
+                "\nSave Energy ModeButton: " + this.saveEnergyModeButton;
+    }
+
 }

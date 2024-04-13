@@ -21,4 +21,11 @@ public class Dimension {
     public long getLength() {
         return length;
     }
+
+    @Override
+    public String toString(){
+        return "height: " + this.getHeight() +
+                "\twidth: " + this.getWidth() +
+                "\tlength: " + this.getLength();
+    }
 }

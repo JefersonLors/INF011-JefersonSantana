@@ -7,7 +7,7 @@ import products.concreteComponentes.cords.CarbonFiberCord;
 import products.concreteComponentes.cords.FabricCord;
 
 public class GamerMouse {
-    private Dimension dimension;
+    private Dimension dimensions;
     private Position position;
     private BluetoothModule bluetoothModule;
     private Cord cord;
@@ -27,7 +27,7 @@ public class GamerMouse {
                       Cord cord, LightModule lightModule, Scroll scroll, Material material,
                       Sensor sensor, Button rightClickButton, Button leftClickButton,
                       Button powerButton, Button saveEnergyModeButton, Button extraLeftButtonA,
-                      Button extraLeftButtonB, Button extraLeftButtonC, Dimension dimension) {
+                      Button extraLeftButtonB, Button extraLeftButtonC, Dimension dimensions) {
         this.bluetoothModule = bluetoothModule;
         this.cord = cord;
         this.lightModule = lightModule;
@@ -41,7 +41,7 @@ public class GamerMouse {
         this.extraLeftButtonA = extraLeftButtonA;
         this.extraLeftButtonB = extraLeftButtonB;
         this.extraLeftButtonC = extraLeftButtonC;
-        this.dimension = dimension;
+        this.dimensions = dimensions;
     }
 
     public void pressExtraLeftButtonC(){
@@ -67,5 +67,23 @@ public class GamerMouse {
     }
     public void moveTo(Position position){
         this.position = position;
+    }
+
+    @Override
+    public String toString(){
+        return "Dimensions: " + this.dimensions +
+                "\nBluetooth Module: " + this.bluetoothModule +
+                "\nLight Module: " + this.lightModule +
+                "\nCord: " + this.cord +
+                "\nScroll: " + this.scroll +
+                "\nMaterial: " + this.material +
+                "\nSensor: " + this.sensor +
+                "\nRight Button: " + this.rightClickButton +
+                "\nLeft Button: " + this.leftClickButton +
+                "\nExtra Left Button A: " + this.extraLeftButtonA +
+                "\nExtra Left Button B: " + this.extraLeftButtonB +
+                "\nExtra Left Button C: " + this.extraLeftButtonC +
+                "\nPower Button: " + this.powerButton +
+                "\nSave Energy ModeButton: " + this.saveEnergyModeButton;
     }
 }

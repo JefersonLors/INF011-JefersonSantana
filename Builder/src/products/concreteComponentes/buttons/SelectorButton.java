@@ -2,10 +2,10 @@ package products.concreteComponentes.buttons;
 
 import products.components.Button;
 
-public class FlatButton implements Button {
+public class SelectorButton implements Button {
     @Override
     public String toString() {
-        return "FlatButton";
+        return "SelectorButton";
     }
 
     @Override

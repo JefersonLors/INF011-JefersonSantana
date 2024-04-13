@@ -16,9 +16,8 @@ public class BasicMouseBuilder implements MouseBuilder {
     private Button leftClickButton;
 
     @Override
-    public MouseBuilder withDimension(Dimension dimension) {
+    public void withDimension(Dimension dimension) {
         this.dimension = dimension;
-        return this;
     }
 
     @Override
@@ -38,7 +37,7 @@ public class BasicMouseBuilder implements MouseBuilder {
     }
 
     @Override
-    public MouseBuilder withRgbModule(LightModule lightModule) {
+    public MouseBuilder withLightModule(LightModule lightModule) {
         return null;
     }
 

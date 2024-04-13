@@ -23,9 +23,8 @@ public class GamerMouseBuilder implements MouseBuilder {
     private Button extraLeftButtonC;
 
     @Override
-    public MouseBuilder withDimension(Dimension dimension) {
+    public void withDimension(Dimension dimension) {
         this.dimension = dimension;
-        return this;
     }
 
     @Override
@@ -46,7 +45,7 @@ public class GamerMouseBuilder implements MouseBuilder {
     }
 
     @Override
-    public MouseBuilder withRgbModule(LightModule lightModule) {
+    public MouseBuilder withLightModule(LightModule lightModule) {
         this.lightModule = lightModule;
         return this;
     }

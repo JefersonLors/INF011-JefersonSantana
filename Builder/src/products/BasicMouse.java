@@ -38,4 +38,14 @@ public class BasicMouse {
     public void moveTo(Position position){
         this.position = position;
     }
+    @Override
+    public String toString(){
+        return "Dimensions: " + this.dimensions +
+                "\nCord: " + this.cord +
+                "\nScroll: " + this.scroll +
+                "\nMaterial: " + this.material +
+                "\nSensor: " + this.sensor +
+                "\nRight Button: " + this.rightClickButton +
+                "\nLeft Button: " + this.leftClickButton;
+    }
 }
