@@ -1,3 +1,9 @@
+package objectAdapter;
+
+import objectAdapter.adaptees.StripeProcessor;
+import objectAdapter.adapters.StripeProcessorAdapter;
+import objectAdapter.target.PayPalPaymentProcessor;
+
 /*
     Imagine um sistema de integração com serviços de pagamento online que atualmente suporta apenas um único provedor de pagamento, o PayPal.
     A integração com o PayPal é realizada através de uma interface PayPalPaymentProcessor, que possui métodos para iniciar um pagamento,
@@ -13,8 +19,12 @@
     de PayPalPaymentProcessor. A adaptação deve ser feita de forma que a integração com o Stripe ocorra de maneira transparente e sem impactar o
     código já existente. Boa sorte!
  */
-public class Main {
+public class Client {
     public static void main(String[] args) {
+        PayPalPaymentProcessor processor = new StripeProcessorAdapter(new StripeProcessor());
 
+        processor.initiatePayment(98.89);
+        processor.processPayment("15");
+        System.out.println(processor.checkPaymentStatus("15"));
     }
 }
