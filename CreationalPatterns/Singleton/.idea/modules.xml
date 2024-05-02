@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IFBAINF011AvaliaçãoI.2023.2.iml" filepath="$PROJECT_DIR$/IFBAINF011AvaliaçãoI.2023.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singleton.iml" filepath="$PROJECT_DIR$/Singleton.iml" />
     </modules>
   </component>
 </project>
