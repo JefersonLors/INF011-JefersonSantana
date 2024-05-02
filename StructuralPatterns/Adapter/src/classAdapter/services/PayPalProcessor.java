@@ -11,18 +11,18 @@ public class PayPalProcessor implements PayPalPaymentProcessor {
 
     @Override
     public void initiatePayment(double amount) {
-        System.out.println( "[" + this.getClass().getCanonicalName() + "] started the payment with amount: R$" + amount);
+        System.out.println( "[" + this.getClass().getCanonicalName() + "] started the payment with amount R$" + amount + " in " + LocalDateTime.now());
     }
 
     @Override
     public void processPayment(String transactionID) {
-        System.out.println("[" + this.getClass().getCanonicalName() + "] the transaction " + transactionID + " started in " + LocalDateTime.now());
+        System.out.println("[" + this.getClass().getCanonicalName() + "] the transaction " + transactionID + " process began in " + LocalDateTime.now());
     }
 
     @Override
     public String checkPaymentStatus(String transactionID) {
         Random random = new Random();
-        String response = "[" + this.getClass().getCanonicalName() + "] the transaction " + transactionID + " status is ";
-        return response + ((random.nextInt(6) / 2) == 0 ? "finished " : "processing");
+        String response = "[" + this.getClass().getCanonicalName() + "] the transaction " + transactionID + " status was ";
+        return response + ((random.nextInt(6) / 2) == 0 ? "\"finished\"" : "\"processing\"") + " in " + LocalDateTime.now();
     }
 }

@@ -2,6 +2,7 @@ package objectAdapter;
 
 import objectAdapter.adaptees.StripeProcessor;
 import objectAdapter.adapters.StripeProcessorAdapter;
+import objectAdapter.services.PayPalProcessor;
 import objectAdapter.target.PayPalPaymentProcessor;
 
 /*
