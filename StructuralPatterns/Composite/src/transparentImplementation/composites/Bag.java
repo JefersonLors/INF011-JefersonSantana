@@ -1,16 +1,16 @@
-package composites;
+package transparentImplementation.composites;
 
-import components.Item;
+import transparentImplementation.components.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Backpack implements Item {
+public class Bag implements Item {
     private List<Item> items;
     private double volume;
     private double weight;
 
-    public Backpack(double volume, double weight){
+    public Bag(double volume, double weight){
         this.volume = volume;
         this.weight = weight;
         this.items = new ArrayList<>();
@@ -36,13 +36,7 @@ public class Backpack implements Item {
 
     @Override
     public double getWeight() {
-        double total = 0;
-
-        for(Item item : items){
-            total += item.getWeight();
-        }
-
-        return total + this.weight;
+        return this.weight;
     }
 
     @Override
@@ -58,7 +52,7 @@ public class Backpack implements Item {
     @Override
     public Item addItem(Item item) throws Exception {
         if(item != null && item.getVolume() <= this.getFreeSpace()){
-           this.items.add(item);
+            this.items.add(item);
         }else{
             throw new Exception("That item doesn't feet here");
         }
@@ -79,6 +73,7 @@ public class Backpack implements Item {
             return this.items.get(itemCode);
         throw new Exception("That item is not here.");
     }
+
     @Override
     public String toString(){
         StringBuilder content = new StringBuilder();

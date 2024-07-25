@@ -1,12 +1,12 @@
-package leafs;
+package transparentImplementation.leafs;
 
-import components.Item;
+import transparentImplementation.components.Item;
 
-public class SpiceSpray implements Item {
+public class Tupperware implements Item {
     private double weight;
     private double volume;
 
-    public SpiceSpray(double volume, double weight){
+    public Tupperware(double volume, double weight){
         this.volume = volume;
         this.weight = weight;
     }

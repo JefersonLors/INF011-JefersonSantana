@@ -1,16 +1,16 @@
-package composites;
+package transparentImplementation.composites;
 
-import components.Item;
+import transparentImplementation.components.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bag implements Item {
+public class Backpack implements Item {
     private List<Item> items;
     private double volume;
     private double weight;
 
-    public Bag(double volume, double weight){
+    public Backpack(double volume, double weight){
         this.volume = volume;
         this.weight = weight;
         this.items = new ArrayList<>();
@@ -22,7 +22,7 @@ public class Bag implements Item {
 
     @Override
     public double getFreeSpace() {
-        return this.volume - this.getUsedSpace();
+        return this.getVolume() - this.getUsedSpace();
     }
 
     @Override
@@ -36,7 +36,13 @@ public class Bag implements Item {
 
     @Override
     public double getWeight() {
-        return this.weight;
+        double total = 0;
+
+        for(Item item : items){
+            total += item.getWeight();
+        }
+
+        return total + this.weight;
     }
 
     @Override
@@ -52,7 +58,7 @@ public class Bag implements Item {
     @Override
     public Item addItem(Item item) throws Exception {
         if(item != null && item.getVolume() <= this.getFreeSpace()){
-            this.items.add(item);
+           this.items.add(item);
         }else{
             throw new Exception("That item doesn't feet here");
         }
@@ -63,6 +69,7 @@ public class Bag implements Item {
     public Item removeItem(Item item) {
         if( item != null ){
             this.items.remove(item);
+            return this;
         }
         return null;
     }
@@ -73,7 +80,6 @@ public class Bag implements Item {
             return this.items.get(itemCode);
         throw new Exception("That item is not here.");
     }
-
     @Override
     public String toString(){
         StringBuilder content = new StringBuilder();

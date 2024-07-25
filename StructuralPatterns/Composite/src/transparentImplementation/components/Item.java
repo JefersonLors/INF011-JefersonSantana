@@ -1,4 +1,4 @@
-package components;
+package transparentImplementation.components;
 
 public interface Item {
     double getVolume();

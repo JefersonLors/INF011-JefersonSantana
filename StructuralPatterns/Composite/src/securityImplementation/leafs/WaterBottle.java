@@ -1,6 +1,6 @@
-package leafs;
+package securityImplementation.leafs;
 
-import components.Item;
+import securityImplementation.components.Item;
 
 public class WaterBottle implements Item {
     private double weight;
@@ -34,20 +34,5 @@ public class WaterBottle implements Item {
     @Override
     public void seeInside() {
         System.out.println("\t" + getClass().getName());
-    }
-
-    @Override
-    public Item addItem(Item item) throws Exception {
-        throw new Exception("That item has not children");
-    }
-
-    @Override
-    public Item removeItem(Item item) throws Exception {
-        throw new Exception("That item has not children");
-    }
-
-    @Override
-    public Item getItem(int itemCode) throws Exception {
-        throw new Exception("That item has not children");
     }
 }
