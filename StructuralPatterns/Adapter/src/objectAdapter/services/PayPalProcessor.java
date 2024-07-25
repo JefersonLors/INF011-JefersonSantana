@@ -9,20 +9,25 @@ public class PayPalProcessor implements PayPalPaymentProcessor {
     private String transactionID;
     private Double amount;
 
-    @Override
-    public void initiatePayment(double amount) {
-        System.out.println( "[" + this.getClass().getCanonicalName() + "] started the payment with amount R$" + amount + " in " + LocalDateTime.now());
+    public PayPalProcessor(String transactionID, double amount){
+        this.transactionID = transactionID;
+        this.amount = amount;
     }
 
     @Override
-    public void processPayment(String transactionID) {
-        System.out.println("[" + this.getClass().getCanonicalName() + "] the transaction " + transactionID + " process began in " + LocalDateTime.now());
+    public void initiatePayment() {
+        System.out.println( "[" + this.getClass().getCanonicalName() + "] started the payment with amount R$" + this.amount + " in " + LocalDateTime.now());
     }
 
     @Override
-    public String checkPaymentStatus(String transactionID) {
+    public void processPayment() {
+        System.out.println("[" + this.getClass().getCanonicalName() + "] the transaction " + this.transactionID + " process began in " + LocalDateTime.now());
+    }
+
+    @Override
+    public String checkPaymentStatus() {
         Random random = new Random();
-        String response = "[" + this.getClass().getCanonicalName() + "] the transaction " + transactionID + " status was ";
+        String response = "[" + this.getClass().getCanonicalName() + "] the transaction " + this.transactionID + " status was ";
         return response + ((random.nextInt(6) / 2) == 0 ? "\"finished\"" : "\"processing\"") + " in " + LocalDateTime.now();
     }
 }

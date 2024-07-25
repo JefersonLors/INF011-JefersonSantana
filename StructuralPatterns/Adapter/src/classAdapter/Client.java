@@ -1,5 +1,6 @@
 package classAdapter;
 
+import classAdapter.adapters.StripeAdvancedProcessorAdapter;
 import classAdapter.adapters.StripeProcessorAdapter;
 import classAdapter.target.PayPalPaymentProcessor;
 
@@ -20,10 +21,16 @@ import classAdapter.target.PayPalPaymentProcessor;
  */
 public class Client {
     public static void main(String[] args) {
-        PayPalPaymentProcessor processor = new StripeProcessorAdapter();
+        PayPalPaymentProcessor processorA = new StripeProcessorAdapter("2", 23.32);
 
-        processor.initiatePayment(98.89);
-        processor.processPayment("15");
-        System.out.println(processor.checkPaymentStatus("15"));
+        processorA.initiatePayment();
+        processorA.processPayment();
+        System.out.println(processorA.checkPaymentStatus());
+
+        PayPalPaymentProcessor processorB = new StripeAdvancedProcessorAdapter("3", 999.99);
+
+        processorB.initiatePayment();
+        processorB.processPayment();
+        System.out.println(processorB.checkPaymentStatus());
     }
 }

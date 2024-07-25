@@ -1,13 +1,13 @@
 package classAdapter.adapters;
 
-import classAdapter.adaptees.StripeProcessor;
+import classAdapter.adaptees.StripeAdvancedProcessor;
 import classAdapter.target.PayPalPaymentProcessor;
 
-public class StripeProcessorAdapter extends StripeProcessor implements PayPalPaymentProcessor {
+public class StripeAdvancedProcessorAdapter extends StripeAdvancedProcessor implements PayPalPaymentProcessor {
     private String transactionID;
     private Double amount;
 
-    public StripeProcessorAdapter(String transactionID, double amount){
+    public StripeAdvancedProcessorAdapter(String transactionID, double amount){
         this.transactionID = transactionID;
         this.amount = amount;
     }

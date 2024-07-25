@@ -1,7 +1,7 @@
 package objectAdapter.target;
 
 public interface PayPalPaymentProcessor {
-    void initiatePayment(double amount);
-    void processPayment(String transactionID);
-    String checkPaymentStatus(String transactionID);
+    void initiatePayment();
+    void processPayment();
+    String checkPaymentStatus();
 }
