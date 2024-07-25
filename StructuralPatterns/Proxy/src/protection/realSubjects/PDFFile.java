@@ -10,6 +10,7 @@ public class PDFFile implements XFile {
     private final String fileExtension = ".pdf";
 
     public PDFFile(String fileName, String path){
+        System.out.println("\n<<<< [Creating File] >>>>\n");
         this.fileName = fileName;
         this.filePath = path;
         this.fileContent = "";
@@ -32,7 +33,7 @@ public class PDFFile implements XFile {
         if( !this.itsOpen ){
             throw new Exception("Is not possible read an unopened file");
         }
-
+        System.out.println("\n<<<< [Reading File] >>>>\n");
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("File path: " + this.filePath + "/" +this.fileName + this.fileExtension);
         stringBuilder.append("\nContent: " + this.fileContent);
