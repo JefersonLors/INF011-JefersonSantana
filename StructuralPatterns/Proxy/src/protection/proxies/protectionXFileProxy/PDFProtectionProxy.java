@@ -1,14 +1,14 @@
-package protection.proxies;
+package protection.proxies.protectionXFileProxy;
 
 import protection.others.Permission;
 import protection.others.User;
 import protection.subjects.XFile;
 
-public class PDFProxyFile implements XFile {
+public class PDFProtectionProxy implements XFile {
     private XFile file;
     private User user;
 
-    public PDFProxyFile(XFile file, User user){
+    public PDFProtectionProxy(XFile file, User user){
         this.file = file;
         this.user = user;
     }
