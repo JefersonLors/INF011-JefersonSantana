@@ -1,5 +1,6 @@
 import components.Coffee;
 import concreteComponents.BlackCoffee;
+import concreteComponents.LatteCoffe;
 import concreteDecorators.Cream;
 import concreteDecorators.Sugar;
 import decorators.AddOn;
@@ -26,9 +27,24 @@ import decorators.AddOn;
 */
 public class Client {
     public static void main(String[] args) {
-        System.out.println(new Cream(
-                                new Sugar(
-                                        new BlackCoffee(), 10), 5)
-        );
+        Coffee blackCoffee = new BlackCoffee();
+        Coffee lateCoffee = new LatteCoffe();
+
+        Coffee coffeeWithSugar = new Sugar(blackCoffee, 23);
+        Coffee coffeeWithSugarAndCream = new Cream( coffeeWithSugar, 56);
+
+        Coffee lateCoffeeWithSugar = new Sugar(lateCoffee, 77);
+        Coffee lateCoffeeWithSugarAndCream = new Cream(lateCoffeeWithSugar, 99);
+
+        System.out.println("===============================================================");
+        System.out.println(coffeeWithSugar);
+        System.out.println("===============================================================");
+        System.out.println(lateCoffeeWithSugar);
+        System.out.println("===============================================================");
+        System.out.println(coffeeWithSugarAndCream);
+        System.out.println("===============================================================");
+        System.out.println(lateCoffeeWithSugarAndCream);
+        System.out.println("===============================================================");
+
     }
 }
