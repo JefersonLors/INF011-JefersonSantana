@@ -45,7 +45,7 @@ public class Client {
             //mas não aqui.
             System.out.println(file.read());
 
-            file.write(" Mudando de novo para testar a virtualização do objeto.");
+            file.write(" Mudando de novo para testar a virtualização do objeto. ");
             //A solicitação de leitura deve ser enviada aqui
             System.out.println(file.read());
             //mas não aqui.
