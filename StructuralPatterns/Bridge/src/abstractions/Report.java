@@ -8,7 +8,6 @@ public abstract class Report {
     protected Report(ReportImplementor reportImplementor){
         this.reportImplementor = reportImplementor;
     }
-
     public abstract Report insertHead(String content);
     public abstract Report insertFooter(String content);
     public abstract Report insertBodyContent(String content);
