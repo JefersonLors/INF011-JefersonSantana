@@ -4,42 +4,32 @@ import abstractions.Report;
 import implementors.ReportImplementor;
 
 public class ReportFile extends Report {
-    public ReportFile(ReportImplementor reportImplementor){
+    private String header;
+    private String body;
+    private String footer;
+    private String assigner;
+    public ReportFile(ReportImplementor reportImplementor,
+                      String header, String body, String footer){
         super(reportImplementor);
-    }
-    @Override
-    public Report insertHead(String content) {
-        this.reportImplementor.setHeader(this.reportImplementor.getHeader() + content);
-        return this;
-    }
-
-    @Override
-    public Report insertFooter(String content) {
-        this.reportImplementor.setFooter(this.reportImplementor.getFooter() + content);
-        return this;
+        this.header = header;
+        this.body = body;
+        this.footer = footer;
+        this.assigner = "";
     }
 
     @Override
-    public Report insertBodyContent(String content) {
-        this.reportImplementor.setBodyContent(this.reportImplementor.getBodyContent() + content);
-        return this;
-    }
-
-    @Override
-    public void clearContent() {
+    public String generate() {
         this.reportImplementor.clearReport();
-    }
+        this.reportImplementor.setHeader(this.reportImplementor.getHeader() + this.header);
+        this.reportImplementor.setBodyContent(this.reportImplementor.getBodyContent() + this.body);
+        this.reportImplementor.setFooter(this.reportImplementor.getFooter() + this.footer);
+        this.reportImplementor.setAssigning(this.assigner.isEmpty() ? "____________________________" : this.assigner);
 
+        return this.reportImplementor.getReport();
+    }
     @Override
     public Report assign(String assigner) {
-        String lastAssigner = this.reportImplementor.getAssigning();
-        lastAssigner += lastAssigner.isEmpty() ? "" : ", ";
-        this.reportImplementor.setAssigning(lastAssigner + assigner);
+        this.assigner = assigner;
         return this;
-    }
-
-    @Override
-    public String get() {
-        return this.reportImplementor.getReport();
     }
 }

@@ -7,7 +7,7 @@ public class HTMLImplementor implements ReportImplementor {
     private String headerContent = "";
     private String bodyContent = "";
     private String footerContent = "";
-    private String assigner = "unsigned";
+    private String assigner = "";
     public HTMLImplementor(){}
     @Override
     public ReportImplementor setHeader(String content) {

@@ -7,7 +7,7 @@ public class PDFImplementor implements ReportImplementor {
     private String headerContent = "";
     private String bodyContent = "";
     private String footerContent = "";
-    private String assigner = "unsigned";
+    private String assigner = "";
     public PDFImplementor(){}
     @Override
     public ReportImplementor setHeader(String content) {
