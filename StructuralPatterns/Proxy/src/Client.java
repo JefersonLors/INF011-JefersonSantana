@@ -1,11 +1,9 @@
-package protection;
-
-import protection.others.Permission;
-import protection.others.User;
-import protection.proxies.protectionXFileProxy.PDFProtectionProxy;
-import protection.proxies.virtualXFileProxy.PDFVirtualProxy;
-import protection.realSubjects.PDFFile;
-import protection.subjects.XFile;
+import others.Permission;
+import others.User;
+import proxies.protectionXFileProxy.PDFProtectionProxy;
+import proxies.virtualXFileProxy.PDFVirtualProxy;
+import realSubjects.PDFFile;
+import subjects.XFile;
 
 public class Client {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
-package protection.proxies.virtualXFileProxy;
+package proxies.virtualXFileProxy;
 
-import protection.realSubjects.PDFFile;
-import protection.subjects.XFile;
+import realSubjects.PDFFile;
+import subjects.XFile;
 
 public class PDFVirtualProxy implements XFile {
     private PDFFile pdfFile;

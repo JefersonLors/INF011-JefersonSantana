@@ -1,4 +1,4 @@
-package protection.others;
+package others;
 
 public enum Permission {
     USER,

@@ -1,6 +1,6 @@
-package protection.realSubjects;
+package realSubjects;
 
-import protection.subjects.XFile;
+import subjects.XFile;
 
 public class PDFFile implements XFile {
     private String fileContent;

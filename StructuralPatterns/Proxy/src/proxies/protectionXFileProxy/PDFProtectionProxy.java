@@ -1,8 +1,8 @@
-package protection.proxies.protectionXFileProxy;
+package proxies.protectionXFileProxy;
 
-import protection.others.Permission;
-import protection.others.User;
-import protection.subjects.XFile;
+import others.Permission;
+import others.User;
+import subjects.XFile;
 
 public class PDFProtectionProxy implements XFile {
     private XFile file;

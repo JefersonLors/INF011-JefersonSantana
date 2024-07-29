@@ -1,4 +1,4 @@
-package protection.subjects;
+package subjects;
 
 public interface XFile {
     void open() throws Exception;
